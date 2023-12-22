@@ -1,0 +1,376 @@
+<main id="main">
+
+    <!-- ======= About User Section ======= -->
+    <section id="about" class="about ">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Profile</h2>
+                <div class="container-xl px-4 mt-4 text-center">
+                    <!-- Account page navigation-->
+                    <hr class="mt-0 mb-4">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 mb-3">
+                            <!-- Summarry card 1-->
+                            <div class="card h-100 border-start-lg border-start-primary">
+                                <div class="card-body">
+                                    <div class="small text-muted">Nica Balance</div>
+                                    <div class="h3">NC <%= userData.account_balance %>
+                                    </div>
+                                    <a class="text-arrow-icon small" href="#!">
+                                        Nica Coin Top Up
+                                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-3">
+                            <!-- Summarry card 2-->
+                            <div class="card h-100 border-start-lg border-start-secondary">
+                                <div class="card-body">
+                                    <div class="small text-muted">Username</div>
+                                    <div class="h3"><small>
+                                            <%= userData.username %>
+                                    </div>
+                                    <a class="text-arrow-icon small text-secondary" href="/nica/edit">
+                                        <small>Edit Username</small>
+                                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <!-- Summarry Card 3-->
+                            <div class="card h-100 border-start-lg border-start-success">
+                                <div class="card-body">
+                                    <div class="small text-muted">E-mail Address</div>
+                                    <div class="h3">
+                                        <%= userData.email %>
+                                    </div>
+                                    <a class="text-arrow-icon small" href="#!">
+                                        <small>Nica<%= userData.username %></small>
+                                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <!-- Summarry Card 3-->
+                            <div class="card h-100 border-start-lg border-start-success">
+                                <div class="card-body">
+                                    <div class="small text-muted">Nica Votes</div>
+                                    <div class="h3">
+                                        Votes : <%= userData.votes %>
+                                    </div>
+                                    <a class="text-arrow-icon small" href="/nica/vote">
+                                        <small>Nica Voting</small>
+                                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-4 mb-3">
+                            <!-- Summarry card 1-->
+                            <div class="card h-100 border-start-lg border-start-primary">
+                                <div class="card-body">
+                                    <div class="small text-muted">Current Date & Time</div>
+                                    <div class="h3">
+                                        <p id="datetime"></p>
+                                    </div>
+                                    <a class="text-arrow-icon small" href="#!">
+                                        <small>Nica<%= userData.username %></small>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4 mb-3">
+                            <!-- Summarry card 2-->
+                            <div class="card h-100 border-start-lg border-start-secondary">
+                                <div class="card-body">
+                                    <div class="small text-muted">NiCA Account Number</div>
+                                    <div class="h3"><small>
+                                            NiCA Acct : <%= userData.account_id %>
+                                    </div>
+                                    <a class="text-arrow-icon small text-secondary" href="/nica/edit">
+                                        <small>Nica Role</small>
+                                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 mb-3">
+                            <!-- Summarry card 1-->
+                            <div class="card h-100 border-start-lg border-start-primary">
+                                <div class="card-body">
+                                    <div class="small text-muted">About <%= userData.username %>
+                                    </div>
+                                    <div class="h3">
+                                        <%= userData.about %>
+                                    </div>
+                                    <a class="text-arrow-icon small" href="#!">
+                                        <small>Nica Nigeria</small>
+                                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="feather feather-arrow-right">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Details card-->
+                    <div class="card card-header-actions mb-4">
+                        <div class="card-header">
+                            Account Details
+                            <button class="btn btn-sm btn-primary" type="button">Add Payment Method</button>
+                        </div>
+                        <div class="card-body px-0">
+                            <!-- Profile Details 1-->
+                            <div class="d-flex align-items-center justify-content-between px-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-cc-mastercard fa-2x cc-color-mastercard"></i>
+                                    <div class="ms-4">
+                                        <div class="small">Phone Number</div>
+                                        <div class="text-xs text-muted">Tel: <%= userData.username %> </div>
+                                    </div>
+                                </div>
+                                <div class="ms-4 small"> <span class="badge bg-success">Saved</span>
+                                    <a class="text-muted me-3" href="#!"></a>
+
+                                    <a href="/nica/edit">Edit</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- Profile Details 2-->
+                            <div class="d-flex align-items-center justify-content-between px-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-cc-mastercard fa-2x cc-color-mastercard"></i>
+                                    <div class="ms-4">
+                                        <div class="small">Password</div>
+                                        <div class="text-xs text-muted">XXxXXXxXXX</div>
+                                    </div>
+                                </div>
+                                <div class="ms-4 small"> <span class="badge bg-success">Secured</span>
+                                    <a class="text-muted me-3" href="#!"></a>
+
+                                    <a href="/nica/edit">Edit</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- Profile Details 3-->
+                            <div class="d-flex align-items-center justify-content-between px-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-cc-mastercard fa-2x cc-color-mastercard"></i>
+                                    <div class="ms-4">
+                                        <div class="small">Account Balance</div>
+                                        <div class="text-xs text-muted">NiCA Coin : <%= userData.account_balance %> </div>
+                                    </div>
+                                </div>
+                                <div class="ms-4 small"> <span class="badge bg-success">Paid
+                                    
+                                </span>
+                                    <a class="text-muted me-3" href="#!"></a>
+
+                                    <a href="/nica/vote">Buy</a>
+                                </div>
+                            </div>  <hr>
+                            <div class="d-flex align-items-center justify-content-between px-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fab fa-cc-mastercard fa-2x cc-color-mastercard"></i>
+                                    <div class="ms-4">
+                                        <div class="small">Current Votes Acquired</div>
+                                        <div class="text-xs text-muted">Votes : <%= userData.votes %> </div>
+                                    </div>
+                                </div>
+                                <div class="ms-4 small"> <span class="badge bg-success">Saved</span>
+                                    <a class="text-muted me-3" href="#!"></a>
+
+                                    <a href="/nica/vote">Get Votes</a>
+                                </div>
+                            </div> 
+                            <hr>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> <br>
+    </section><!-- End About Section -->
+
+
+    <style>
+        body {
+            margin-top: 20px;
+            background-color: #f2f6fc;
+            color: #69707a;
+        }
+
+        .img-account-profile {
+            height: 10rem;
+        }
+
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+
+        .card {
+            box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+        }
+
+        .card .card-header {
+            font-weight: 500;
+        }
+
+        .card-header:first-child {
+            border-radius: 0.35rem 0.35rem 0 0;
+        }
+
+        .card-header {
+            padding: 1rem 1.35rem;
+            margin-bottom: 0;
+            background-color: rgba(33, 40, 50, 0.03);
+            border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+        }
+
+        .form-control,
+        .dataTable-input {
+            display: block;
+            width: 100%;
+            padding: 0.875rem 1.125rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1;
+            color: #69707a;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #c5ccd6;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.35rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .nav-borders .nav-link.active {
+            color: #0061f2;
+            border-bottom-color: #0061f2;
+        }
+
+        .nav-borders .nav-link {
+            color: #69707a;
+            border-bottom-width: 0.125rem;
+            border-bottom-style: solid;
+            border-bottom-color: transparent;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .fa-2x {
+            font-size: 2em;
+        }
+
+        .table-billing-history th,
+        .table-billing-history td {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            padding-left: 1.375rem;
+            padding-right: 1.375rem;
+        }
+
+        .table> :not(caption)>*>*,
+        .dataTable-table> :not(caption)>*>* {
+            padding: 0.75rem 0.75rem;
+            background-color: var(--bs-table-bg);
+            border-bottom-width: 1px;
+            box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+        }
+
+        .border-start-primary {
+            border-left-color: #0061f2 !important;
+        }
+
+        .border-start-secondary {
+            border-left-color: #6900c7 !important;
+        }
+
+        .border-start-success {
+            border-left-color: #00ac69 !important;
+        }
+
+        .border-start-lg {
+            border-left-width: 0.25rem !important;
+        }
+
+        .h-100 {
+            height: 100% !important;
+        }
+    </style>
+
+
+
+    <script>
+        // Function to update date and time
+        function updateDateTime() {
+            // Get current date and time
+            var currentDate = new Date();
+
+            // Format the date and time
+            var formattedDateTime = currentDate.toLocaleString();
+
+            // Update the content of the 'datetime' element
+            document.getElementById('datetime').innerHTML = formattedDateTime;
+        }
+
+        // Call the function to display initial date and time
+        updateDateTime();
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>

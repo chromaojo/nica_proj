@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Payment - NICA</title>
+
+    <link href="/public/assets/img/put/Logo white.jpg" rel="icon">
+    <link href="/public/assets/img/put/Logo white.jpg" rel="apple-touch-icon">
+
+    <!-- NiCA Core CSS -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+
+
+    <main class="form-signin">
+        <form action="/payment" method="POST">
+            <img class="mb-4" src="/assets/img/put/Logo white.jpg" alt="" width="79" height="87">
+            <h1 class="h3 mb-3 fw-normal">Kindly Make Payment</h1>
+
+            
+            <div class="form-floating">
+                <input type="email" name="email" class="form-control" id="floatingInput" required
+                    placeholder="use special characters @#$%&">
+                <label for="floatingInput">Enter Email :</label>
+            </div> <br>
+            <div class="form-floating">
+                <input type="number" name="amount" class="form-control" id="floatingInput" required
+                    placeholder="use special characters @#$%&">
+                <label for="floatingInput">Enter Amount in Naira :</label>
+            </div> <br>
+            
+            <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Initiate Payment</button>
+            <p class="mt-5 mb-3 text-muted">&copy; NICA NIGERIA</p>
+            <a href="/">Back to Home</a>
+        </form>
+    </main>
+
+
+
+</body>
+
+</html>

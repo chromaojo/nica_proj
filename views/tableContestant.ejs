@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"> <br>
+
+            <h4>Contestant List</h4>
+
+
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Username</th>
+                            <th>Account Number</th>
+                            <th>Account Balance</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Votes </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% cont.forEach(conte=>{ %>
+                            <a href="/">
+                                <tr>
+                                    <th scope="row">
+                                        <ol>
+                                            <li>#</li>
+
+                                    </th>
+
+                                    <td>
+                                        <%= conte.username %>
+                                    </td>
+                                    <td>
+                                        <%= conte.account_id %>
+                                    </td>
+                                    <td>
+                                        <%= conte.account_balance %>
+                                    </td>
+                                    <td>
+                                        <%= conte.email %>
+                                    </td>
+                                    <td>
+                                        <%= conte.phone_number %>
+                                    </td>
+                                    <td>
+                                        <%= conte.votes %>
+                                    </td>
+
+                                </tr>
+                            </a>
+                            <% }); %>
+                                </ol>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

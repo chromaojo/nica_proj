@@ -1,0 +1,38 @@
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <a href="/assets/img/profile-img.png">
+          <img src="/assets/img/profile-img.png" alt="" class="img-fluid rounded-circle">
+        </a>
+        <h1 class="text-light"><a href="mailto:<%= userData.email %>"> <small><%= userData.username %></small> </a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="/nica/facebook" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="/nica/instagram" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://wa.me/+2348166960006" class="linkedin"><i class="bx bxl-whatsapp"></i></a>
+          <a href="/nica/payment" class="twitter"><i class="bx bx-money-withdraw"></i></a>
+          <a href="/logout" class="google-plus"><i class="bx bx-power-off"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="/dashboard" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="/nica/profile" class="nav-link scrollto"><i class="bx bx-user-check"></i> <span>Profile</span></a></li>
+          <li><a href="/nica/edit" class="nav-link scrollto"><i class="bx bx-paint"></i> <span>Edit</span></a></li>
+          <% if (userData.role === 'contestant') { %>
+          <li><a href="/nica/vote" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Get Votes</span></a></li>
+          <li><a href="/nica/coin" class="nav-link scrollto"><i class="bx bx-coin"></i> <span>Get Coins</span></a></li>
+          <% } else if(userData.role === 'admin') {%>
+            <li>Admin Option</li>
+            <li><a href="/admin/contest" class="nav-link scrollto"><i class="bx bx-group"></i> <span>Contestants</span></a></li>
+            <% } %>
+          <li><a href="/logout" class="nav-link scrollto"><i class="bx bx-power-off"></i>
+              <span>Log Out</span></a></li>
+
+          <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->

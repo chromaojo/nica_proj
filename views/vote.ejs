@@ -1,0 +1,66 @@
+<br>
+<div class="container"><img class="mb-4" src="/assets/img/put/Logo white.jpg" alt="" width="79" height="87">
+    <div class="row text-center">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-9"><h2 style="color: red;">From Your Nica Coin Balance. You can get <b id="voteNum"></b> votes maximum</h1> <br>
+            <div class="card">
+                <div class="card-title"><br>
+                    <h1 class="h3 mb-3 fw-normal"><b>G E T - V O T E S</b></h1>
+                </div>
+                <div class="card-body">
+                    <form action="/convert/vote" method="POST">
+                        <div class="form-floating">
+                            <div class="row">
+                                <div class="col-4">
+                                    <p><b>Current NiCA Balance :</b> <i id="nicaBal"><%= userData.account_balance %> NC</i>
+                                    </p>
+                                    
+                                </div>
+                                <div class="col-4">
+                                    <p><b>Current Vote :</b> <i>
+                                        <%= userData.votes %>
+                                    </i></p>
+                                </div>
+                                <div class="col-4">
+                                    <b id="numberOfVotes">Accesible Votes Loading..</b>
+                                </div>
+                            </div>
+                        </div> <br>
+                        <div class="form-floating">
+                            <input type="hidden" class="form-control" id="totalVotes" name="totalVotes">
+                            
+                        </div>
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="voteAmount" placeholder="Password" name="amount">
+                            <label for="floatingPassword">Enter Amount Of Votes To Get</label>
+                        </div>
+                        <p class="mt-5 mb-3 text-muted">Kindly note that a vote is 50 Nica Coins </p>
+
+                        <button class="btn btn-lg btn-primary" type="submit">Get Votes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const nicaBal = document.getElementById('nicaBal').textContent;
+    const voteAmount = document.getElementById('voteAmount');
+    const nicaValue = parseInt(nicaBal);
+    // Conversion Code Sample
+    if (nicaValue) {
+        const numberOfVotes = nicaValue / 50;
+        // Update the HTML content with the results
+
+        document.getElementById('numberOfVotes').textContent = `Accesible Votes: ${numberOfVotes}`;
+        document.getElementById('totalVotes').value = numberOfVotes
+        document.getElementById('voteNum').textContent = numberOfVotes;
+    }
+
+
+
+
+</script>

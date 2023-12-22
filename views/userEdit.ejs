@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-md-3"></div>
+        <div class="col-md-9 col-9 ">
+            <main class="form-signin text-center">
+                <form method="POST" action="/profile/updateUser">
+                    <img class="mb-4" src="/assets/img/put/Logo white.jpg" alt="" width="79" height="87">
+                    <h1 class="h3 mb-3 fw-normal"><b>Edit User Details</b></h1>
+
+                    <div class="form-floating">
+                        <input type="username" name="username" class="form-control" id="floatingInput" required
+                            placeholder="use special characters @#$%&">
+                        <label for="floatingInput">Enter New Username : <b>
+                                <%= userData.username %>
+                            </b> <small> <mark>Avoid Spacing</mark></small></label>
+                    </div> <br> <button class="w-100 btn btn-lg btn-primary" type="submit">Update Username </button><br>
+                </form> <hr>
+
+
+                <form method="POST" action="/profile/updatePass">
+                    <div class="form-floating">
+                        <input type="password" name="oldPassword" required class="form-control" id="floatingPassword"
+                            placeholder="Password" minlength="5">
+                        <label for="floatingPassword">Enter Old Password : <b>XXXXXXX</b></label>
+                    </div> <br>
+                    <div class="form-floating">
+                        <input type="password" name="newPassword" required class="form-control" id="floatingPassword"
+                            placeholder="Use Numbers, Caplock Case and Lowercase " minlength="5">
+                        <label for="floatingPassword">Enter New Password : <b>XXXXXXX</b></label>
+                    </div> <br> <button class="w-100 btn btn-lg btn-primary" type="submit">Update Password </button> <br> <br>
+
+                    <a href="/dashboard" class="btn btn-outline-primary">Done</a>
+                    <p class="mt-5 mb-3 text-muted">&copy; NICA NIGERIA ||
+                    </p>
+
+                </form>
+            </main>
+        </div>
+    </div>
+</div>
