@@ -10,13 +10,10 @@ const mysql = require('mysql');
 //   });
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  host: 'localhost',
-  user: 'root',
-  password: 'Oluchroma234',
-  database: 'nica_app',
-  waitForConnections: true,
-
+    Hostname: process.env.Hostname,
+    Username: process.env.Username,
+    Port : process.env.Port,
+    waitForConnections: true,
 });
 
 
