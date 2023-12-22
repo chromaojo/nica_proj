@@ -225,7 +225,7 @@ route.post('/login/account', async (req, res) => {
          a.phone_number,
          a.about,
          a.email as account_email
-       FROM nica_app.users u
+       FROM bkew76jt01b1ylysxnzp.users u
        LEFT JOIN bkew76jt01b1ylysxnzp.accounts a ON u.user_id = a.user_id
        WHERE u.email = ?;
      `;
@@ -270,7 +270,7 @@ route.post('/login/account', async (req, res) => {
 route.get('/dashboard', UserLoggin, (req, res) => {
     const userData = req.app.get('userData');
     const userCookie = req.cookies.user ? JSON.parse(req.cookies.user) : null;
-    console.log('Here is my Dashboard Data', userCookie);
+
     if (!userCookie) {
         res.redirect('/login');
     } else {
