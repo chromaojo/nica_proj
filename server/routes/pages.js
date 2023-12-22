@@ -39,7 +39,7 @@ route.get('/', AvoidIndex, (req, res) => {
 
 // Create A Database
 route.get('/createDb', (req, res) => {
-    let sql = 'CREATE DATABASE nica_app';
+    let sql = 'CREATE DATABASE bkew76jt01b1ylysxnzp';
 
     db.query(sql, (err, result) => {
         if (err) {
@@ -56,7 +56,7 @@ route.get('/createTable', (req, res) => {
 
 
     const sqlUsers = `
-    CREATE TABLE IF NOT EXISTS nica_app.users (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.users (
       user_id INT PRIMARY KEY AUTO_INCREMENT,
       username VARCHAR(255) NOT NULL UNIQUE,
       email VARCHAR(255) NOT NULL UNIQUE,
@@ -66,7 +66,7 @@ route.get('/createTable', (req, res) => {
   `;
 
     const sqlAccounts = `
-    CREATE TABLE IF NOT EXISTS nica_app.accounts (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.accounts (
       account_id INT UNIQUE PRIMARY KEY,
       account_balance INT DEFAULT 0,
       votes INT DEFAULT 0,
@@ -138,7 +138,7 @@ route.post('/register/new', (req, res) => {
     const { email, username, password, passwordCofirm } = req.body;
 
 
-    db.query('SELECT email FROM nica_app.users WHERE email = ?', [email], async (error, result) => {
+    db.query('SELECT email FROM bkew76jt01b1ylysxnzp.users WHERE email = ?', [email], async (error, result) => {
         if (error) { console.log("Customized Error ", error); }
         if (result.length > 0) {
             return res.status(401).json({
@@ -146,7 +146,7 @@ route.post('/register/new', (req, res) => {
             })
         } else if (password == passwordCofirm) {
             const hashedPassword = await bcrypt.hash(password, 10);
-            db.query('INSERT INTO nica_app.users SET ?', { username: username, email: email, password: hashedPassword, role: 'contestant' }, (error, result) => {
+            db.query('INSERT INTO bkew76jt01b1ylysxnzp.users SET ?', { username: username, email: email, password: hashedPassword, role: 'contestant' }, (error, result) => {
                 if (error) {
                     console.log('A Registeration Error Occured ', error);
                 } else {
@@ -162,7 +162,7 @@ route.post('/register/new', (req, res) => {
                     // mail.sendIt(messages)
 
                     // To create the account table into the user 
-                    db.query('SELECT * FROM nica_app.accounts WHERE email = ?', [email], async (error, result) => {
+                    db.query('SELECT * FROM bkew76jt01b1ylysxnzp.accounts WHERE email = ?', [email], async (error, result) => {
                         if (error) {
 
                             return res.status(500).json({
@@ -170,14 +170,14 @@ route.post('/register/new', (req, res) => {
                             });
                         } else {
 
-                            db.query('SELECT * FROM nica_app.users WHERE email = ?', [email], async (error, result) => {
+                            db.query('SELECT * FROM bkew76jt01b1ylysxnzp.users WHERE email = ?', [email], async (error, result) => {
                                 if (error) {
 
                                     return res.status(500).json({
                                         message: 'Internal Server Error'
                                     });
                                 } else {
-                                    db.query('INSERT INTO nica_app.accounts SET ?', { user_id: result[0].user_id, email: email, account_id: rand, account_balance: 0 });
+                                    db.query('INSERT INTO bkew76jt01b1ylysxnzp.accounts SET ?', { user_id: result[0].user_id, email: email, account_id: rand, account_balance: 0 });
                                 }
                             });
                         }
@@ -226,7 +226,7 @@ route.post('/login/account', async (req, res) => {
          a.about,
          a.email as account_email
        FROM nica_app.users u
-       LEFT JOIN nica_app.accounts a ON u.user_id = a.user_id
+       LEFT JOIN bkew76jt01b1ylysxnzp.accounts a ON u.user_id = a.user_id
        WHERE u.email = ?;
      `;
     db.query(sqlGetUserWithAccount, [email], async (error, result) => {
@@ -274,7 +274,7 @@ route.get('/dashboard', UserLoggin, (req, res) => {
     if (!userCookie) {
         res.redirect('/login');
     } else {
-        const user = db.query('SELECT * FROM nica_app.users WHERE email = ?', [userData.email], async (error, result) => {
+        const user = db.query('SELECT * FROM bkew76jt01b1ylysxnzp.users WHERE email = ?', [userData.email], async (error, result) => {
 
             console.log('This is the dashboard Details : ', userData);
             if (error) {
@@ -304,7 +304,7 @@ route.post('/profile/updateUser', UserLoggin, async (req, res) => {
         const userData = req.app.get('userData');
 
         // Ensure you have a 'db' object representing your database connection
-        let updateUsername = 'UPDATE nica_app.users SET username = ? WHERE email = ?';
+        let updateUsername = 'UPDATE bkew76jt01b1ylysxnzp.users SET username = ? WHERE email = ?';
         let values = [username, userData.email];
 
         // Assuming 'db.query' is a valid method provided by your database library
@@ -327,7 +327,7 @@ route.post('/profile/updateUser', UserLoggin, async (req, res) => {
                   a.about,
                   a.email as account_email
                 FROM nica_app.users u
-                LEFT JOIN nica_app.accounts a ON u.user_id = a.user_id
+                LEFT JOIN bkew76jt01b1ylysxnzp.accounts a ON u.user_id = a.user_id
                 WHERE u.email = ?;
               `;
                 db.query(sqlGetUserWithAccount, [userData.email], async (error, result) => {
@@ -424,7 +424,7 @@ route.post('/profile/updatePass', UserLoggin, async (req, res) => {
                       a.about,
                       a.email as account_email
                     FROM nica_app.users u
-                    LEFT JOIN nica_app.accounts a ON u.user_id = a.user_id
+                    LEFT JOIN bkew76jt01b1ylysxnzp.accounts a ON u.user_id = a.user_id
                     WHERE u.email = ?;
                   `;
                     db.query(sqlGetUserWithAccount, [userData.email], async (error, result) => {
@@ -479,7 +479,7 @@ route.post('/convert/vote', UserLoggin, (req, res) => {
     const newVote = amont + userData.votes
 
     if (amont <= totalV) {
-        let voting = 'UPDATE nica_app.accounts SET votes = ? WHERE email = ?';
+        let voting = 'UPDATE bkew76jt01b1ylysxnzp.accounts SET votes = ? WHERE email = ?';
         let debit = 'UPDATE nica_app.accounts SET account_balance = ? WHERE account_id = ?';
         let values = [newVote, userData.email];
         let val = [newBal, userData.account_id];
@@ -512,7 +512,7 @@ route.post('/convert/vote', UserLoggin, (req, res) => {
                   a.about,
                   a.email as account_email
                 FROM nica_app.users u
-                LEFT JOIN nica_app.accounts a ON u.user_id = a.user_id
+                LEFT JOIN bkew76jt01b1ylysxnzp.accounts a ON u.user_id = a.user_id
                 WHERE u.email = ?;
               `;
                 db.query(sqlGetUserWithAccount, [userData.email], async (error, result) => {
