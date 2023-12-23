@@ -46,7 +46,7 @@ routee.get('/contest', AdminRoleBased, (req , res)=>{
          a.phone_number,
          a.about,
          a.email as account_email
-       FROM nica_app.users u
+       FROM bkew76jt01b1ylysxnzp.users u
        LEFT JOIN bkew76jt01b1ylysxnzp.accounts a ON u.user_id = a.user_id
        WHERE u.role = ?;
      `;
